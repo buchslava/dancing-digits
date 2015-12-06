@@ -1,0 +1,17 @@
+{
+  "name": "dancing-digits-server-example",
+  "version": "0.0.1",
+  "description": "DancingDigits server example",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Vyacheslav Chub",
+  "license": "Apache 2",
+  "dependencies": {
+    "express": "^4.13.3",
+    "winston": "^2.1.1",
+    "winston-websocket": "^0.1.0"
+  }
+}
