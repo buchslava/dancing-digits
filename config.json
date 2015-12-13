@@ -1,0 +1,28 @@
+[
+  {
+    "name": "rand-num-1",
+    "template": "num value 1: #T {green-fg}#V{/green-fg}",
+    "box": {
+      "top": 5,
+      "left": 1,
+      "width": 50,
+      "height": 1,
+      "fg": "white",
+      "bg": "1d1b10",
+      "tags": true
+    }
+  },
+  {
+    "name": "rand-str-1",
+    "template": "string value 1: #T {yellow-fg}#V{/yellow-fg}",
+    "box": {
+      "top": 6,
+      "left": 1,
+      "width": 80,
+      "height": 1,
+      "fg": "white",
+      "bg": "#974806",
+      "tags": true
+    }
+  }
+]
