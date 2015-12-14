@@ -2,7 +2,6 @@
 
 ##roadmap:
 
-  1. list type (string)
-  2. log type (error)
-  3. java logger & example
-  4. task management
+  1. log type (error)
+  2. reconnect
+  3. task management

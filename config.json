@@ -1,28 +1,36 @@
 [
   {
     "name": "rand-num-1",
-    "template": "num value 1: #T {green-fg}#V{/green-fg}",
+    "template": "num value 1: {black-fg}#V{/black-fg}",
     "box": {
-      "top": 5,
+      "top": 2,
       "left": 1,
-      "width": 50,
+      "width": 30,
       "height": 1,
       "fg": "white",
-      "bg": "1d1b10",
+      "bg": "#974806",
       "tags": true
     }
   },
   {
     "name": "rand-str-1",
     "template": "string value 1: #T {yellow-fg}#V{/yellow-fg}",
-    "box": {
-      "top": 6,
+    "items": [],
+    "list": {
+      "top": 3,
       "left": 1,
-      "width": 80,
-      "height": 1,
+      "width": "50%",
+      "height": "50%",
+      "align": "center",
       "fg": "white",
-      "bg": "#974806",
-      "tags": true
+      "bg": "1d1b10",
+      "border": {
+        "type": "line"
+      },
+      "selectedBg": "green",
+      "mouse": true,
+      "keys": true,
+      "vi": true
     }
   }
 ]

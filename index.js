@@ -27,11 +27,18 @@ var box = blessed.box({
   }
 });
 
-
 var model = [];
 config.forEach(function (setting) {
-  setting.box.parent = box;
-  setting.boxInst = blessed.box(setting.box);
+  if (setting.box) {
+    setting.box.parent = box;
+    setting.inst = blessed.box(setting.box);
+  }
+
+  if (setting.list) {
+    setting.list.parent = box;
+    setting.inst = blessed.list(setting.list);
+  }
+
   model.push(setting);
 });
 
@@ -59,7 +66,16 @@ task.connect(function (data) {
         content = setting.template
           .replace(/#T/, detail.createdAt)
           .replace(/#V/, detail.message.value);
-        setting.boxInst.setContent(content);
+
+        if (setting.box) {
+          setting.inst.setContent(content);
+        }
+
+        if (setting.list) {
+          setting.items = [content].concat(setting.items);
+          setting.inst.setItems(setting.items);
+          setting.inst.select(0);
+        }
       }
     }
   });
