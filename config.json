@@ -32,5 +32,29 @@
       "keys": true,
       "vi": true
     }
+  },
+  {
+    "name": "err-1",
+    "template": "{yellow-fg}#T{/yellow-fg} #V\n",
+    "text": {
+      "content": "",
+      "mouse": true,
+      "keys": true,
+      "vi": true,
+      "border": {
+        "type": "line",
+        "fg": "#ff0000"
+      },
+      "scrollbar": {
+        "fg": "blue",
+        "ch": "|"
+      },
+      "width": "49%",
+      "height": "100%",
+      "top": "0",
+      "left": "51%",
+      "align": "left",
+      "tags": true
+    }
   }
 ]

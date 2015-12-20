@@ -22,11 +22,11 @@ server.listen(3000);
 console.log("Server is listening on port 3000");
 
 setInterval(function() {
-  logger.info('rand-num-1=' + parseInt(Math.random()*1000000));
+  logger.info('rand-num-1@' + parseInt(Math.random()*1000000));
 }, 500);
 
 setInterval(function() {
-  logger.info('rand-str-1=' + Math.random().toString(36).substring(7));
+  logger.info('rand-str-1@' + Math.random().toString(36).substring(7));
 }, 5000);
 
 setInterval(function() {
@@ -34,6 +34,6 @@ setInterval(function() {
   try {
     console.log(a[100]);
   } catch (e) {
-    logger.error('@' + e.message + ' '  + e.stack);
+    logger.error('err-1@' + e.message + ' '  + e.stack);
   }
 }, 10000);

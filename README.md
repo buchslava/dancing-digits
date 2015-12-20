@@ -2,6 +2,7 @@
 
 ##roadmap:
 
-  1. log type (error)
-  2. reconnect
-  3. task management
+  1. reconnect
+  2. multi config
+  3. second example with frontend
+  4. task management

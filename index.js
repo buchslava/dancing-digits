@@ -22,6 +22,11 @@ config.forEach(function (setting) {
     setting.inst = blessed.list(setting.list);
   }
 
+  if (setting.text) {
+    setting.text.parent = box;
+    setting.inst = blessed.scrollabletext(setting.text);
+  }
+
   model.push(setting);
 });
 
@@ -33,7 +38,7 @@ var task = new Task({
 task.connect(function (data) {
   var setting, content;
   _.each(data, function(detail) {
-    if (detail && detail.level === 'info' && detail.message && detail.message.name) {
+    if (detail && detail.message && detail.message.name) {
       setting = _.findWhere(model, {name: detail.message.name});
       if (setting) {
         content = setting.template
@@ -48,6 +53,11 @@ task.connect(function (data) {
           setting.items = [content].concat(setting.items);
           setting.inst.setItems(setting.items);
           setting.inst.select(0);
+        }
+
+        if (setting.text) {
+          setting.inst.content = content + setting.inst.content;
+          setting.inst.setContent(setting.inst.content);
         }
       }
     }

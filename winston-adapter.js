@@ -5,12 +5,12 @@ module.exports = function (data) {
   if (_.isArray(content)) {
     _.each(content, function (item) {
       if (item.message) {
-        var splitted = item.message.split('=');
+        var pos = item.message.indexOf('@');
 
-        if (splitted && splitted.length > 1) {
+        if (pos >= 0) {
           item.message = {
-            name: splitted[0],
-            value: splitted[1]
+            name: item.message.substr(0, pos),
+            value: item.message.substr(pos + 1)
           };
         }
       }
