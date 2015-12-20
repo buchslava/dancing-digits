@@ -5,7 +5,14 @@ module.exports = function (data) {
   if (_.isArray(content)) {
     _.each(content, function (item) {
       if (item.message) {
-        item.message = JSON.parse(item.message);
+        var splitted = item.message.split('=');
+
+        if (splitted && splitted.length > 1) {
+          item.message = {
+            name: splitted[0],
+            value: splitted[1]
+          };
+        }
       }
     });
   }
