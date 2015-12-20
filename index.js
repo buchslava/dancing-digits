@@ -4,28 +4,11 @@ var blessed = require('blessed');
 
 var adapter = require('./winston-adapter');
 var config = _.clone(require('./config.json'));
+var utils = require('./utils');
 var Task = require('./task');
 
-var screen = blessed.screen({
-  smartCSR: true
-});
-
-screen.title = 'DancingDigits';
-
-var box = blessed.box({
-  top: 'center',
-  left: 'center',
-  width: '100%',
-  height: '100%',
-  tags: true,
-  style: {
-    fg: 'white',
-    bg: 'gray',
-    border: {
-      fg: '#f0f0f0'
-    }
-  }
-});
+var screen = utils.getMainScreen();
+var box = utils.getMainBox();
 
 var model = [];
 config.forEach(function (setting) {
@@ -41,16 +24,6 @@ config.forEach(function (setting) {
 
   model.push(setting);
 });
-
-
-screen.append(box);
-
-screen.key(['escape', 'q', 'C-c'], function(ch, key) {
-  return process.exit(0);
-});
-
-box.focus();
-screen.render();
 
 var task = new Task({
   url: 'ws://localhost:3000/logs',
